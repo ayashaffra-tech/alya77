@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+   <link rel="stylesheet" href="form.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+
+
+  </head>
+  <body>
+    <div class="container">
+      <div id="login-form">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <input
+            type="text"
+            id="username"
+            placeholder="Username or Email"
+            required
+          />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+        <div class="forgot-password">
+          <a href="#" id="forgot-link">Forgot Password?</a>
+        </div>
+      </div>
+      <div id="forgot-form" class="hidden">
+        <h2>Forgot Password</h2>
+        <form id="forgotForm">
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+          <button type="submit">Reset Password</button>
+        </form>
+        <div class="forgot-password">
+          <a href="#" id="back-link">Back to Login</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const loginForm = document.getElementById("login-form");
+      const forgotForm = document.getElementById("forgot-form");
+      const forgotLink = document.getElementById("forgot-link");
+      const backLink = document.getElementById("back-link");
+
+      forgotLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        loginForm.classList.add("hidden");
+        forgotForm.classList.remove("hidden");
+      });
+
+      backLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        forgotForm.classList.add("hidden");
+        loginForm.classList.remove("hidden");
+      });
+
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Login functionality not implemented yet.");
+        });
+
+      document
+        .getElementById("forgotForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Password reset functionality not implemented yet.");
+        });
+    </script>
+  </body>
+</html>
